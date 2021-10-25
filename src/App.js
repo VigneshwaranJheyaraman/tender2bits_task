@@ -1,23 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import {ThemeContext} from "./theme";
+import {useState} from "react";
+import TodoApp from "./components/TodoApp/TodoApp";
 
 function App() {
+
+  var [isLightTheme, setLightTheme] = useState(true);
+  const toggleTheme = () => {
+    setLightTheme(!isLightTheme);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`App ${isLightTheme ? "light" : "dark"}`}>
+      <ThemeContext.Provider value={{isLightTheme, toggleTheme}}>
+        <TodoApp />
+      </ThemeContext.Provider>
     </div>
   );
 }

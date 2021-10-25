@@ -1,0 +1,55 @@
+.todo{
+	display: flex;
+	flex-direction: column;
+	margin: 0.3em;
+	padding: 0.3em;
+	justify-content: space-between;
+}
+
+.todo .flex{
+	width: 100%;
+}
+
+.todo .active, .todo .inactive{
+	border-radius: 50%;
+	width: auto;
+	height: 100%;
+	background-color: black;
+	margin: unset;
+	padding: 0.5em;
+	border: 1px solid black;
+}
+
+.todo .inactive{
+	border:  1px solid gray;
+	background-color: gray;
+}
+
+.dark .active{
+	background-color: cyan;
+	border-color: cyan;
+}
+
+.todo .inactive .tick{
+	background-color: transparent;
+}
+
+.todo .active .tick{
+	background-color: cyan;
+}
+
+.todo .active input{
+	width: auto;
+	height: 100%;
+}
+
+.todo .content{
+	font-weight: bold;
+	width: 100%;
+	text-align: left;
+}
+
+.todo .dt{
+	color: gray;
+	font-style: italic;
+}
